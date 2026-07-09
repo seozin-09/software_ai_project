@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울로봇고등학교 로봇소프트웨어과 AI 프로젝트 전시관</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f5fbff;
+            color: #1f2d3d;
+            font-family: sans-serif;
+        }
+
+        .top {
+            min-height: 360px;
+            padding: 70px 8% 50px;
+            background:
+                linear-gradient(135deg, #ffffff 0%, #eaf7ff 55%, #dff4ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 30px;
+            background: #88d9ff;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            line-height: 1.15;
+            letter-spacing: -2px;
+        }
+
+        .school-name {
+            display: inline-block;
+            font-size: 34px;
+            color: #24658f;
+            margin-bottom: 6px;
+        }
+
+        .department-name {
+            display: inline-block;
+            font-size: 58px;
+            color: #0078df;
+            font-weight: 800;
+        }
+
+        .project-name {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 42px;
+            color: #61c8f7;
+            font-weight: 800;
+        }
+
+        .sub {
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #24658f;
+            font-weight: 700;
+        }
+
+        .hero-buttons {
+            margin-top: 32px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons a {
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 999px;
+            background: #0088e8;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(0, 136, 232, 0.25);
+        }
+
+        .hero-buttons a:nth-child(2) {
+            background: white;
+            color: #0088e8;
+            border: 2px solid #b8eaff;
+        }
+
+        .mascot-wrap {
+            width: 310px;
+            height: 310px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .circle {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: rgba(127, 199, 255, 0.24);
+            border: 3px dashed rgba(0, 149, 232, 0.25);
+            animation: spin 18s linear infinite;
+        }
+
+        .pibo {
+            position: absolute;
+            left: 50%;
+            top: 54%;
+            transform: translate(-50%, -50%);
+            width: 190px;
+            height: 240px;
+        }
+
+        .antenna {
+            width: 5px;
+            height: 30px;
+            background: #20bbed;
+            border-radius: 999px;
+            position: absolute;
+            left: 92px;
+            top: -8px;
+        }
+
+        .antenna-circle {
+            position: absolute;
+            border: 3px solid #20bbed;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .antenna-circle.big {
+            width: 24px;
+            height: 24px;
+            left: -9px;
+            top: -22px;
+        }
+
+        .antenna-circle.small {
+            width: 10px;
+            height: 10px;
+        }
+
+        .antenna-circle.one {
+            left: 14px;
+            top: -18px;
+        }
+
+        .antenna-circle.two {
+            left: -18px;
+            top: -12px;
+        }
+
+        .head {
+            width: 150px;
+            height: 115px;
+            background: white;
+            border-radius: 38px;
+            position: absolute;
+            left: 20px;
+            top: 12px;
+            box-shadow: 0 15px 35px rgba(0, 116, 196, 0.18);
+        }
+
+        .eye {
+            width: 22px;
+            height: 22px;
+            background: #009ee7;
+            border-radius: 50%;
+            position: absolute;
+            top: 43px;
+            box-shadow: 0 0 14px rgba(0, 181, 255, 0.7);
+        }
+
+        .eye.left {
+            left: 42px;
+        }
+
+        .eye.right {
+            right: 42px;
+        }
+
+        .mouth {
+            width: 42px;
+            height: 22px;
+            background: #1f2d3d;
+            border-radius: 0 0 22px 22px;
+            position: absolute;
+            left: 54px;
+            top: 72px;
+        }
+
+        .body {
+            width: 130px;
+            height: 120px;
+            background: white;
+            border-radius: 38px;
+            position: absolute;
+            left: 30px;
+            top: 125px;
+            box-shadow: 0 15px 35px rgba(0, 116, 196, 0.18);
+        }
+
+        .screen {
+            width: 44px;
+            height: 20px;
+            background: #1f2d3d;
+            border-radius: 6px;
+            position: absolute;
+            left: 43px;
+            top: 38px;
+        }
+
+        .screen::after {
+            content: "AI";
+            color: #7ce8ff;
+            font-size: 11px;
+            font-weight: 700;
+            position: absolute;
+            margin-left: 3.5px;
+            left: 13px;
+            top: 3px;
+        }
+
+        .arm {
+            width: 38px;
+            height: 78px;
+            background: white;
+            border-radius: 24px;
+            position: absolute;
+            top: 145px;
+            box-shadow: 0 12px 25px rgba(0, 116, 196, 0.12);
+        }
+
+        .arm.left {
+            left: -5px;
+            transform: rotate(14deg);
+        }
+
+        .arm.right {
+            right: -5px;
+            transform: rotate(-14deg);
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 8% 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: 34px;
+            color: #0078df;
+        }
+
+        .section-title p {
+            margin-top: 12px;
+            color: #5d7180;
+            font-size: 17px;
+        }
+
+        .search-box {
+            max-width: 560px;
+            margin: 0 auto 35px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 17px 22px;
+            border-radius: 999px;
+            border: 2px solid #c9efff;
+            outline: none;
+            font-size: 16px;
+            background: white;
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 26px;
+            border: 1px solid #d8f3ff;
+            box-shadow: 0 12px 30px rgba(0, 116, 196, 0.08);
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(0, 116, 196, 0.16);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: #e8f8ff;
+            color: #0088e8;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .project-title {
+            margin: 0;
+            font-size: 22px;
+            color: #1f2d3d;
+            line-height: 1.35;
+        }
+
+        .student {
+            margin-top: 10px;
+            color: #607381;
+            font-size: 15px;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .link-btn {
+            flex: 1;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 13px 12px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #0088e8, #5bc8f7);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .video-btn {
+            background: white;
+            color: #0088e8;
+            border: 2px solid #b8eaff;
+        }
+
+        .no-video {
+            background: #f5fbff;
+            color: #91a8b5;
+            border: 2px solid #d8f3ff;
+            cursor: default;
+        }
+
+        .footer {
+            padding: 30px;
+            text-align: center;
+            color: #7b8b96;
+            background: white;
+            border-top: 1px solid #d8f3ff;
+        }
+
+        @media (max-width: 900px) {
+            .top-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .school-name {
+                font-size: 30px;
+            }
+
+            .department-name {
+                font-size: 48px;
+            }
+
+            .project-name {
+                font-size: 36px;
+            }
+
+            .project-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .top {
+                padding-top: 50px;
+            }
+
+            .school-name {
+                font-size: 24px;
+            }
+
+            .department-name {
+                font-size: 38px;
+            }
+
+            .project-name {
+                font-size: 28px;
+            }
+
+            .sub {
+                font-size: 17px;
+            }
+
+            .mascot-wrap {
+                width: 260px;
+                height: 260px;
+            }
+
+            .project-list {
+                grid-template-columns: 1fr;
+            }
+
+            .button-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top">
+        <div class="top-inner">
+            <div>
+                <div class="label">SEOUL ROBOT HIGH SCHOOL</div>
+
+                <h1>
+                    <span class="department-name">로봇소프트웨어과</span><br>
+                    <span class="project-name">AI 프로젝트 전시관</span>
+                </h1>
+
+                <p class="sub">
+                    Teachable Machine을 활용해 <br>
+                    학생들이 직접 제작한 인공지능 프로젝트를 소개합니다.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects">프로젝트 보러가기</a>
+                    <a href="https://teachablemachine.withgoogle.com/" target="_blank">Teachable Machine</a>
+                </div>
+            </div>
+
+            <div class="mascot-wrap">
+                <div class="circle"></div>
+
+                <div class="pibo">
+                    <div class="antenna">
+                        <span class="antenna-circle big"></span>
+                        <span class="antenna-circle small one"></span>
+                        <span class="antenna-circle small two"></span>
+                    </div>
+
+                    <div class="head">
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                        <div class="mouth"></div>
+                    </div>
+
+                    <div class="arm left"></div>
+                    <div class="arm right"></div>
+
+                    <div class="body">
+                        <div class="screen"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section" id="projects">
+        <div class="section-title">
+            <h2>AI 프로젝트 링크&영상 모음</h2>
+            <p>서울로봇고등학교 로봇소프트웨어과 학생들의 Teachable Machine 활용 프로젝트입니다.</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="search" placeholder="프로젝트 제목 또는 학생 이름 검색">
+        </div>
+
+        <div class="project-list" id="projectList"></div>
+    </section>
+
+    <footer class="footer">
+        서울로봇고등학교 로봇소프트웨어과 | Teachable Machine AI Project Exhibition
+    </footer>
+
+    <script>
+        const projects = [
+            {
+                title: "노터치 AI 발표 도우미",
+                student: "한서진",
+                link: "https://seozin09.pythonanywhere.com/",
+                video: ""
+            },
+            {
+                title: "JUMP KING",
+                student: "최희섭",
+                link: "http://yougive9090.github.io/Jumpking_0709/",
+                video: ""
+            },
+            {
+                title: "집중하라곰",
+                student: "이윤우",
+                link: "https://seagogo.github.io/Ai_TeachableMAchineProject-20510LYW/",
+                video: ""
+            },
+            {
+                title: "AI STUDY TIMER",
+                student: "이시훈",
+                link: "https://sihoon8774-netizen.github.io/please-study-my-ai_model/",
+                video: ""
+            },  
+            {
+                title: "준비중",
+                student: "이민준",
+                link: "https://example.com",
+                video: ""
+            },
+            {
+                title: "준비중",
+                student: "이준수",
+                link: "https://example.com",
+                video: ""
+            },
+            {
+                title: "Eóus",
+                student: "권다희",
+                link: "https://example.com",
+                video: ""
+            },
+            {
+                title: "AI 졸음 알리미",
+                student: "김기훈",
+                link: "https://gamma.app/docs/AI--blxggz6p5gd3d0q",
+                video: ""
+            },
+            {
+                title: "준비중",
+                student: "이성윤",
+                link: "https://example.com",
+                video: ""
+            }
+        ];
+
+        const projectList = document.getElementById("projectList");
+        const search = document.getElementById("search");
+
+        function showProjects(data) {
+            projectList.innerHTML = "";
+
+            data.forEach(function(project, index) {
+                const card = document.createElement("div");
+                card.className = "card";
+
+                card.innerHTML = `
+                    <div class="tag">AI PROJECT ${index + 1}</div>
+                    <h3 class="project-title">${project.title}</h3>
+                    <div class="student">학생 이름: ${project.student}</div>
+
+                    <div class="button-row">
+                        <a class="link-btn" href="${project.link}" target="_blank">프로젝트 링크</a>
+                        ${
+                            project.video
+                            ? `<a class="link-btn video-btn" href="${project.video}" target="_blank">시연 영상</a>`
+                            : `<span class="link-btn video-btn no-video">영상 준비중</span>`
+                        }
+                    </div>
+                `;
+
+                projectList.appendChild(card);
+            });
+        }
+
+        search.addEventListener("input", function() {
+            const keyword = search.value.toLowerCase();
+
+            const filtered = projects.filter(function(project) {
+                return project.title.toLowerCase().includes(keyword)
+                    || project.student.toLowerCase().includes(keyword);
+            });
+
+            showProjects(filtered);
+        });
+
+        showProjects(projects);
+    </script>
+</body>
+</html>
